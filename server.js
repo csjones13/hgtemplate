@@ -7,7 +7,7 @@ const { connectDB } = require('./config/database');
 //get port
 const port = process.env.PORT || 3000;
 
-// Create HTTP server
+// Create HTTP server tests
 const server = http.createServer(app);
 
 // Connect to database and start server
