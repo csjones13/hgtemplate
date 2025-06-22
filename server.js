@@ -1,7 +1,7 @@
 //server.js, entry point to the app
 require('dotenv').config({ path: './config/env.js' });
 const http = require('http');
-const app = require('../src/app');
+const app = require('./src/app');
 const { connectDB } = require('./config/database');
 
 //get port
