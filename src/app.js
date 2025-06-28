@@ -5,6 +5,8 @@ const authRoutes = require('./routes/authRoutes');
 const apiRoutes = require('./routes/apiRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
 const logger = require('./utils/logger');
+const fH = require('./utils/fileHashes');
+const { jParse, jEncode } = require('./utils/jsonParse');
 
 const app = express();
 
@@ -38,11 +40,13 @@ app.get(/^\/(?!api|auth).*/, (req, res, next) => {
 
   // Render SPA frontend
   try {
+    let fileHashes = fH.fileHashParser('./fileHashes.json')
+    console.log('File hashes:', fileHashes);
     const b = require('./utils/buildIndexHtml');
     const { csp, nonce } = b.generateCSP();
     res.setHeader('Content-Security-Policy', csp);
     res.setHeader('Content-Type', 'text/html');
-    const html = b.generateIndexHtml(req, csp, nonce);
+    const html = b.generateIndexHtml(req, csp, nonce, jEncode(fileHashes));
     res.send(html);
   } catch (err) {
     next(err);

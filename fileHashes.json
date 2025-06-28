@@ -8,7 +8,35 @@
     "lastModified": "2025-06-22T10:03:46.180Z"
   },
   "public/js/app.js": {
-    "hash": "a6870f28449e01e825dfab71939653deaa1054d56e50368885c377071b5e5738",
-    "lastModified": "2025-06-22T10:04:04.813Z"
+    "hash": "2bcf4dd1df86c7381ed4cd4820afe09ecbf603dd546bafd41a01cf98e469e34e",
+    "lastModified": "2025-06-28T14:12:58.020Z"
+  },
+  "src/utils/fileHashes.js": {
+    "hash": "c786a5e71840226e353ab1c88fef01266c5957c6654f2da83b2b592184a8c6df",
+    "lastModified": "2025-06-28T14:27:16.304Z"
+  },
+  "src/utils/jsonParse.js": {
+    "hash": "1c51b2ef419b843932505bb1391e88987afb3fbb4690852d2e7c55f1dee78492",
+    "lastModified": "2025-06-28T05:40:40.071Z"
+  },
+  "src/app.js": {
+    "hash": "a8ff999524517af1976af34fa0a2a1d668899223b4594da506c64fbfcf98d089",
+    "lastModified": "2025-06-28T05:56:23.237Z"
+  },
+  "src/utils/buildIndexHtml.js": {
+    "hash": "0984fa9f338da2c8c51903c74844b651ad44be59c7bdf742f45af4f0cdaae15e",
+    "lastModified": "2025-06-28T14:26:27.924Z"
+  },
+  "public/js/dynamicLoader.js": {
+    "hash": "c12b0459e8970d177a7985e0edb77ea641a2e2d29fa65eeb05813c2a1d063353",
+    "lastModified": "2025-06-28T14:42:34.881Z"
+  },
+  "public/js/test.js": {
+    "hash": "4d935f9d3858d1d01637da71387f747b5a6b2d5f37128c43ac71e55fd7a27d99",
+    "lastModified": "2025-06-28T14:39:46.545Z"
+  },
+  "server.js": {
+    "hash": "5a05e5134c84021c5b8b72b86dd316895315648f8c13f8b2f3e71aec1de40508",
+    "lastModified": "2025-06-28T14:23:35.427Z"
   }
 }

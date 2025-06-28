@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+//require('dotenv').config();
 
 const generateCSP = () => {
     const nonce = crypto.randomBytes(16).toString('base64');
@@ -16,7 +17,7 @@ const generateCSP = () => {
     return{ csp, nonce };
 }
 
-const generateIndexHtml = (req, csp, nonce) => {
+const generateIndexHtml = (req, csp, nonce, fileHashes) => {
     const metaTags = [
         `<meta charset="UTF-8">`,
         `<meta http-equiv="Content-Security-Policy" content="${csp}">`,
@@ -29,12 +30,16 @@ const generateIndexHtml = (req, csp, nonce) => {
                 <head>
                     <title>My App - ${req.path || 'Home'}</title>
                     ${metaTags}
+                    <script nonce="${nonce}">
+                        window.__FILE_HASHES__ = ${fileHashes};
+                        window.__NODE_ENV__ = "${process.env.NODE_ENV}";
+                    </script>
                     <link rel="stylesheet" href="/css/styles.css">
                 </head>
                 <body>
                     <h1>My Frontend App</h1>
                     <div id="root"></div>
-                    <script nonce="${nonce}" src="/js/app.js"></script>
+                    <script type="module" nonce="${nonce}" src="/js/app.js"></script>
                 </body>
             </html>`;
 
