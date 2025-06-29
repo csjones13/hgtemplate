@@ -8,12 +8,12 @@
     "lastModified": "2025-06-22T10:03:46.180Z"
   },
   "public/js/app.js": {
-    "hash": "2bcf4dd1df86c7381ed4cd4820afe09ecbf603dd546bafd41a01cf98e469e34e",
-    "lastModified": "2025-06-28T14:12:58.020Z"
+    "hash": "40612e6253bd3a76694264d6b203a96297b895387bb7edb59ef93bf690445cbd",
+    "lastModified": "2025-06-29T08:27:51.307Z"
   },
   "src/utils/fileHashes.js": {
-    "hash": "c786a5e71840226e353ab1c88fef01266c5957c6654f2da83b2b592184a8c6df",
-    "lastModified": "2025-06-28T14:27:16.304Z"
+    "hash": "d4c108a1148d90c9db0ff472a5245702a62365bbbf65d51da0b3ecc752f9e2f2",
+    "lastModified": "2025-06-29T06:47:09.840Z"
   },
   "src/utils/jsonParse.js": {
     "hash": "1c51b2ef419b843932505bb1391e88987afb3fbb4690852d2e7c55f1dee78492",
@@ -28,15 +28,35 @@
     "lastModified": "2025-06-28T14:26:27.924Z"
   },
   "public/js/dynamicLoader.js": {
-    "hash": "c12b0459e8970d177a7985e0edb77ea641a2e2d29fa65eeb05813c2a1d063353",
-    "lastModified": "2025-06-28T14:42:34.881Z"
+    "hash": "997b2e2c1e77e8864526e009180f0aa83f461015af12f6f337ba2209fe861d4c",
+    "lastModified": "2025-06-29T05:49:21.423Z"
   },
   "public/js/test.js": {
-    "hash": "4d935f9d3858d1d01637da71387f747b5a6b2d5f37128c43ac71e55fd7a27d99",
-    "lastModified": "2025-06-28T14:39:46.545Z"
+    "hash": "85c6c69756110b186e0e9001298c6b2fb38fb6c033345f32ad2156cecb436dea",
+    "lastModified": "2025-06-29T05:44:06.547Z"
   },
   "server.js": {
     "hash": "5a05e5134c84021c5b8b72b86dd316895315648f8c13f8b2f3e71aec1de40508",
     "lastModified": "2025-06-28T14:23:35.427Z"
+  },
+  "public/js/funtest.js": {
+    "hash": "0c9527713b3be6f0fb88da7958bdf6550532b84ddfdb60a7ab84b7971127011a",
+    "lastModified": "2025-06-29T05:45:15.812Z"
+  },
+  "public/js/router.js": {
+    "hash": "d880c05e4b8cc044917a6c51edc2b693e91bbf43afe02d5fbcf23a46704d5998",
+    "lastModified": "2025-06-29T08:19:18.303Z"
+  },
+  "public/js/navigateTo.js": {
+    "hash": "99aee539edb6d8921f5075eb5603c3b19fe0b52abce6fc81be3c47a1205dca42",
+    "lastModified": "2025-06-29T06:13:22.240Z"
+  },
+  "public/manifest.json": {
+    "hash": "54ec1893e2976e37ab5867baccc933b10baa845ecd6b3be237b90a8d13cd763c",
+    "lastModified": "2025-06-29T06:18:30.616Z"
+  },
+  "public/sw.js": {
+    "hash": "71b1b712e2b7cfc271d06ac3316e986a92dd146726134823c78e3c9f0981b85d",
+    "lastModified": "2025-06-29T08:30:11.094Z"
   }
 }

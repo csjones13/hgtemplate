@@ -20,8 +20,14 @@ export function loader(key, params) {
     }
 
      let p = new Promise(function(resolve, reject) {
-        if((key && typeof key == 'function')) {
-            resolve(true);
+        console.log(`Attempting to load module from: ${src}`, 'loading with key:', key);
+        if((key && (typeof window.__CLASSES__[key] == 'function' || typeof window.__FUNCTIONS__[key] == 'function'))) {
+            console.log(`Module ${key} already loaded, returning existing instance.`);
+            if(typeof window.__CLASSES__[key] == 'function') {
+                resolve(new window.__CLASSES__[key](params));
+            } else if(typeof window.__FUNCTIONS__[key] == 'function') {
+                resolve(window.__FUNCTIONS__[key](params));
+            }
         } else {
             let script = document.createElement('script');
             script.type = 'text/javascript';
@@ -29,7 +35,11 @@ export function loader(key, params) {
             
             document.body.appendChild(script);
             script.onload = function() {
-                resolve(true);
+                if(typeof window.__CLASSES__[key] == 'function') {
+                    resolve(new window.__CLASSES__[key](params));
+                } else if(typeof window.__FUNCTIONS__[key] == 'function') {
+                    resolve(window.__FUNCTIONS__[key](params));
+                }
             }
 
             script.onerror = function() {

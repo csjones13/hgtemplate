@@ -31,6 +31,10 @@ const fileHashParser = (path) => {
             sortedHashes[k] = {};
             sortedHashes[k].hash = fileHashes[key].hash;      
         }
+        if(key.indexOf('sw.js') !== -1) {
+            sortedHashes['sw.js'] = {};
+            sortedHashes['sw.js'].hash = fileHashes[key].hash;
+        }
     });
 
     return sortedHashes;
