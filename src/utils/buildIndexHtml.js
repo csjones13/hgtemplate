@@ -33,6 +33,8 @@ const generateIndexHtml = (req, csp, nonce, fileHashes) => {
                     <script nonce="${nonce}">
                         window.__FILE_HASHES__ = ${fileHashes};
                         window.__NODE_ENV__ = "${process.env.NODE_ENV}";
+                        window.__LOCAL_DB__ = "${process.env.LOCAL_DB}";
+                        window.__STORE_NAME_PENDING__ = "${process.env.STORE_NAME_PENDING}";
                     </script>
                     <link rel="stylesheet" href="/css/styles.css">
                 </head>

@@ -11,12 +11,12 @@ export function loader(key, params) {
         throw new Error(`No file hash found for key: ${key}`);
     }
 
-    //set the import path as via minimized files
+    //set the import path as via minimized files all min files are in one folder
     let src = `/js/min/${key}.min.js?v=${fileHashes[`${key}.js`].hash}`;
 
     if(window.__NODE_ENV__ === 'development') {
-        // In development, load the non-minified version
-        src = `/js/${key}.js?v=${fileHashes[`${key}.js`].hash}`;
+        // In development, load the non-minified version which will have subfolders
+        src = `/js/${fileHashes[`${key}.js`].path}?v=${fileHashes[`${key}.js`].hash}`;
     }
 
      let p = new Promise(function(resolve, reject) {
@@ -48,41 +48,6 @@ export function loader(key, params) {
         }
 
     });
-
-
-    /*
-    //set the promise we will return
-    let p = new Promise(function(resolve, reject) {
-        try {
-            console.log(`Attempting to load module from: ${pathToImport}`);
-            import(pathToImport)
-                .then(module => {
-                    console.log(`Module ${pathToImport} loaded successfully.`);
-                    resolve(module);
-                })
-                .catch(err => {
-                    console.error(`Error loading module ${pathToImport}:`, err);
-                    throw err;
-                });
-        } catch (error) {
-            try {
-                pathToImport = `/public/js/${key}.js?v=${fileHashes[`${key}.js`].hash}`;
-                console.log(`Attempting to load module from: ${pathToImport}`);
-                import(pathToImport)
-                    .then(module => {
-                        console.log(`Module ${pathToImport} loaded successfully.`);
-                        resolve(module);
-                    })
-                    .catch(err => {
-                        console.error(`Error loading module ${pathToImport}:`, err);
-                        throw err;
-                    });
-            } catch (error) {
-                console.error(`Dynamic import failed for ${pathToImport}:`, error);
-                reject(error);
-            }
-        }
-    });*/
 
     return p;
 }

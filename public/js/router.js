@@ -18,8 +18,33 @@ window.__FUNCTIONS__.router = (params = {}) => {
 
     console.log('Current path:', path, 'Component to load:', componentName, 'Component Array:', componentArray);
 
-    d.innerHTML = `<div class="loading">Loading ${componentName}...</div>
-                <div class="component-name"><a href="/about/frank" data-link>Test Link 2</a></div>  `;
+    let sComponent = componentArray[1] || 'home'; // Default to 'home' if no component is specified
 
+    let page = {};
+    switch(sComponent) {
+        default:
+            page.key = 'home';
+            page.name = 'Home';
+            page.component = 'home';
+        break;
+        case 'about':
+            page.key = 'about';
+            page.name = 'About';
+            page.component = 'about';
+        break;
+        case 'forms':
+            page.key = 'forms';
+            page.name = 'Forms';
+            page.component = 'forms';
+        break;
+    }
 
+    JSLoader(page.component, { container: d, }).then((c) => {
+        if(c && typeof c === 'object') {
+            console.log(`Rendering component: ${page.name}`);
+            c.render;
+        } else {
+            console.error(`Component ${page.component} not found or does not have a render method.`);
+        }   
+    });
 }

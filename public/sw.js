@@ -58,6 +58,13 @@ self.addEventListener('message', (event) => {
     } else if (event.data.type === 'FORCE_INSTALL') {
         // Manually trigger install event
         self.registration.update();
+    } else if (event.data.type === 'SYNC_REQUESTS') {
+        // Handle sync requests here
+        console.log('Syncing requests to server...');
+        // You can implement your logic to sync requests to the server
+        // For example, you can fetch pending requests from IndexedDB and send them to the server
+    } else {
+        console.log('Unknown message type:', event.data.type);
     }
 });
 
@@ -109,7 +116,7 @@ self.addEventListener('fetch', (event) => {
     // skip if the cache name is the default one
     if (CACHE_NAME === 'pwa-spa-cache-v1') {
         console.log('Service Worker skipping fetch due to default cache name:', CACHE_NAME);
-        return;
+        event.respondWith(fetch(event.request)); 
     } else {
         console.log('Service Worker fetching:', event.request.url);
         const url = new URL(event.request.url);

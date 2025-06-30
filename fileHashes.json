@@ -8,28 +8,28 @@
     "lastModified": "2025-06-22T10:03:46.180Z"
   },
   "public/js/app.js": {
-    "hash": "40612e6253bd3a76694264d6b203a96297b895387bb7edb59ef93bf690445cbd",
-    "lastModified": "2025-06-29T08:27:51.307Z"
+    "hash": "25a538c58d6b9c5e68a80dd2f3a7e1d3274032115bfc067db424fb908f3023db",
+    "lastModified": "2025-06-30T07:50:12.048Z"
   },
   "src/utils/fileHashes.js": {
-    "hash": "d4c108a1148d90c9db0ff472a5245702a62365bbbf65d51da0b3ecc752f9e2f2",
-    "lastModified": "2025-06-29T06:47:09.840Z"
+    "hash": "e79e46881aba20de75a632d82e1b4d459b544e823085485e5fc4eee74335bba0",
+    "lastModified": "2025-06-30T07:30:05.374Z"
   },
   "src/utils/jsonParse.js": {
     "hash": "1c51b2ef419b843932505bb1391e88987afb3fbb4690852d2e7c55f1dee78492",
     "lastModified": "2025-06-28T05:40:40.071Z"
   },
   "src/app.js": {
-    "hash": "a8ff999524517af1976af34fa0a2a1d668899223b4594da506c64fbfcf98d089",
-    "lastModified": "2025-06-28T05:56:23.237Z"
+    "hash": "5442e69ad1376860fe6180a6b72798a2e0b66180b2516c30390534b52fcc4f7c",
+    "lastModified": "2025-06-30T05:42:58.268Z"
   },
   "src/utils/buildIndexHtml.js": {
-    "hash": "0984fa9f338da2c8c51903c74844b651ad44be59c7bdf742f45af4f0cdaae15e",
-    "lastModified": "2025-06-28T14:26:27.924Z"
+    "hash": "7275e5f66af2331cea76fcc6c68df33c98a13d2bded8bf7b8b956e2772e257cf",
+    "lastModified": "2025-06-30T06:01:17.730Z"
   },
   "public/js/dynamicLoader.js": {
-    "hash": "997b2e2c1e77e8864526e009180f0aa83f461015af12f6f337ba2209fe861d4c",
-    "lastModified": "2025-06-29T05:49:21.423Z"
+    "hash": "237ac5284690b1cfef639b6384739e6ae1bc5aa14a6598267a9b5b16b77fd119",
+    "lastModified": "2025-06-30T07:30:54.352Z"
   },
   "public/js/test.js": {
     "hash": "85c6c69756110b186e0e9001298c6b2fb38fb6c033345f32ad2156cecb436dea",
@@ -44,8 +44,8 @@
     "lastModified": "2025-06-29T05:45:15.812Z"
   },
   "public/js/router.js": {
-    "hash": "d880c05e4b8cc044917a6c51edc2b693e91bbf43afe02d5fbcf23a46704d5998",
-    "lastModified": "2025-06-29T08:19:18.303Z"
+    "hash": "bf488f1fe566311cb2194a982af256f07b807f52a693a111ebdfb0c20c8f8028",
+    "lastModified": "2025-06-30T07:51:43.713Z"
   },
   "public/js/navigateTo.js": {
     "hash": "99aee539edb6d8921f5075eb5603c3b19fe0b52abce6fc81be3c47a1205dca42",
@@ -56,7 +56,23 @@
     "lastModified": "2025-06-29T06:18:30.616Z"
   },
   "public/sw.js": {
-    "hash": "71b1b712e2b7cfc271d06ac3316e986a92dd146726134823c78e3c9f0981b85d",
-    "lastModified": "2025-06-29T08:30:11.094Z"
+    "hash": "7064ad9b587f18bf7353f37c89a78cfe98557f31ff8af480d79b7a0298d04422",
+    "lastModified": "2025-06-30T07:09:44.827Z"
+  },
+  "public/js/customFetch.js": {
+    "hash": "a162a1e885f7b252f29cb00ff41505ba35b33b4f05044e0f20d9a49a4e0fd0e4",
+    "lastModified": "2025-06-30T07:08:50.229Z"
+  },
+  ".env": {
+    "hash": "bf9b2cd4ff2597e661c416f7a49e9cf76b9a4e53641a0a1ee169813f4b804da8",
+    "lastModified": "2025-06-30T06:00:47.501Z"
+  },
+  "public/js/pages/home.js": {
+    "hash": "c6e92f84caa7fb7fd66857ea7f90473492a9b3aec5ea83cffe76b8dfa7944751",
+    "lastModified": "2025-06-30T07:50:49.481Z"
+  },
+  "public/js/pages/about.js": {
+    "hash": "cd5d0676e123548ed6d907976089d2169cb6cef1fa7a542a28c09a907b933887",
+    "lastModified": "2025-06-30T07:52:11.183Z"
   }
 }

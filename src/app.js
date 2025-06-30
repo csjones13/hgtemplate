@@ -10,10 +10,23 @@ const { jParse, jEncode } = require('./utils/jsonParse');
 
 const app = express();
 
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../public')));
+// Serve static files from the public directory and cache them
+app.use(express.static(path.join(__dirname, '../public'), {
+  maxAge: '1y', // Cache static files for 1 year
+  etag: true,
+  lastModified: true,
+  setHeaders: function (res, path) {
+    // Different cache strategies for different file types
+    if (path.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache');
+    } else if (path.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg)$/)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000'); // 1 year
+    }
+  }
+}));
 
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -52,6 +65,7 @@ app.get(/^\/(?!api|auth).*/, (req, res, next) => {
     next(err);
   }
 });
+
 app.use(errorMiddleware);
 
 module.exports = app;
