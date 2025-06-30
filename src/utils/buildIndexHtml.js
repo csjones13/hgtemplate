@@ -1,5 +1,6 @@
 const crypto = require('crypto');
 //require('dotenv').config();
+const { jParse, jEncode } = require('./jsonParse');
 
 const generateCSP = () => {
     const nonce = crypto.randomBytes(16).toString('base64');
@@ -25,6 +26,8 @@ const generateIndexHtml = (req, csp, nonce, fileHashes) => {
 
     let html = '';
 
+    let fH = jParse(fileHashes);;
+
     html = `<!DOCTYPE html>
             <html lang="en">
                 <head>
@@ -36,12 +39,25 @@ const generateIndexHtml = (req, csp, nonce, fileHashes) => {
                         window.__LOCAL_DB__ = "${process.env.LOCAL_DB}";
                         window.__STORE_NAME_PENDING__ = "${process.env.STORE_NAME_PENDING}";
                     </script>
-                    <link rel="stylesheet" href="/css/styles.css">
+                    
+                    <link async rel="preload" as="style" id="custom-bootstrap" href="/css/custom-bootstrap.css?v=${fH["custom-bootstrap.css"].hash}">
+                    <link async rel="preload" as="style" id="grid-templates" href="/css/grid-templates.css?v=${fH["grid-templates.css"].hash}">
+                    <link async rel="preload" as="style" id="generic" href="/css/generic.css?v=${fH["generic.css"].hash}">
+                    <link async rel="preload" as="style" id="styles" href="/css/styles.css?v=${fH["styles.css"].hash}">
                 </head>
                 <body>
-                    <h1>My Frontend App</h1>
                     <div id="root"></div>
                     <script type="module" nonce="${nonce}" src="/js/app.js"></script>
+                    <script type="text/javascript" nonce="${nonce}">
+                        
+
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.getElementById("custom-bootstrap").rel = "stylesheet";
+                            document.getElementById("grid-templates").rel = "stylesheet";
+                            document.getElementById("generic").rel = "stylesheet";
+                            document.getElementById("styles").rel = "stylesheet";
+                        });
+                    </script>
                 </body>
             </html>`;
 

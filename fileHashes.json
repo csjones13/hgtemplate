@@ -12,8 +12,8 @@
     "lastModified": "2025-06-30T07:50:12.048Z"
   },
   "src/utils/fileHashes.js": {
-    "hash": "e79e46881aba20de75a632d82e1b4d459b544e823085485e5fc4eee74335bba0",
-    "lastModified": "2025-06-30T07:30:05.374Z"
+    "hash": "844f6646e3ca9f71e4036ee809d54a19a15995b8369752ed5d2c8d461be30217",
+    "lastModified": "2025-06-30T11:20:00.043Z"
   },
   "src/utils/jsonParse.js": {
     "hash": "1c51b2ef419b843932505bb1391e88987afb3fbb4690852d2e7c55f1dee78492",
@@ -24,8 +24,8 @@
     "lastModified": "2025-06-30T05:42:58.268Z"
   },
   "src/utils/buildIndexHtml.js": {
-    "hash": "7275e5f66af2331cea76fcc6c68df33c98a13d2bded8bf7b8b956e2772e257cf",
-    "lastModified": "2025-06-30T06:01:17.730Z"
+    "hash": "8646c5e75a5dd4f5f2f7e2542497aa6b59a45ddf6363ed7827fd6dfadc241d99",
+    "lastModified": "2025-06-30T11:23:39.597Z"
   },
   "public/js/dynamicLoader.js": {
     "hash": "237ac5284690b1cfef639b6384739e6ae1bc5aa14a6598267a9b5b16b77fd119",
@@ -68,11 +68,35 @@
     "lastModified": "2025-06-30T06:00:47.501Z"
   },
   "public/js/pages/home.js": {
-    "hash": "c6e92f84caa7fb7fd66857ea7f90473492a9b3aec5ea83cffe76b8dfa7944751",
-    "lastModified": "2025-06-30T07:50:49.481Z"
+    "hash": "d9e13b1a4e51073aa7b7e1ba2823e7c7e6fb13961af0e37fc9374b2a7934c50d",
+    "lastModified": "2025-06-30T11:05:49.779Z"
   },
   "public/js/pages/about.js": {
     "hash": "cd5d0676e123548ed6d907976089d2169cb6cef1fa7a542a28c09a907b933887",
     "lastModified": "2025-06-30T07:52:11.183Z"
+  },
+  "src/scss/custom-bootstrap.scss": {
+    "hash": "f27d21a2b4659b0e19661883af11c8e076a418a7605b784660b2c483b85ecf67",
+    "lastModified": "2025-06-30T10:52:25.656Z"
+  },
+  "public/css/grid-templates.css": {
+    "hash": "070ce0dd99bf76e5a1dcdfd19ac0da75ebb9c275cde486e710e9f82355abfb26",
+    "lastModified": "2025-06-30T10:56:43.275Z"
+  },
+  "public/css/generic.css": {
+    "hash": "b34207552718718629d541c196219719cd94bcc808fb0128127a0a6064b9fb9d",
+    "lastModified": "2025-06-30T10:57:27.281Z"
+  },
+  "README.md": {
+    "hash": "bed4045dd58587aeae14f8209cb5e7db85642b6f59283b316845e35d21a31b9f",
+    "lastModified": "2025-06-30T11:07:05.625Z"
+  },
+  "src/utils/loadFileHashes.js": {
+    "hash": "2d62613ece59ee0fee34125dad6bacb4e4b9cd39ef54c9e0ace831e92122ccdb",
+    "lastModified": "2025-06-30T11:10:28.177Z"
+  },
+  "public/css/styles.css": {
+    "hash": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+    "lastModified": "2025-06-30T11:19:25.408Z"
   }
 }
