@@ -38,12 +38,19 @@ const generateIndexHtml = (req, csp, nonce, fileHashes) => {
                         window.__NODE_ENV__ = "${process.env.NODE_ENV}";
                         window.__LOCAL_DB__ = "${process.env.LOCAL_DB}";
                         window.__STORE_NAME_PENDING__ = "${process.env.STORE_NAME_PENDING}";
+                        
+                        // Initialize global variables
+                        window.__CLASSES__ = {};
+                        window.__FUNCTIONS__ = {};
+                        window.__COMPONENTS__ = {};
                     </script>
                     
                     <link async rel="preload" as="style" id="custom-bootstrap" href="/css/custom-bootstrap.css?v=${fH["custom-bootstrap.css"].hash}">
                     <link async rel="preload" as="style" id="grid-templates" href="/css/grid-templates.css?v=${fH["grid-templates.css"].hash}">
                     <link async rel="preload" as="style" id="generic" href="/css/generic.css?v=${fH["generic.css"].hash}">
                     <link async rel="preload" as="style" id="styles" href="/css/styles.css?v=${fH["styles.css"].hash}">
+
+                    <script nonce="${nonce}" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                 </head>
                 <body>
                     <div id="root"></div>

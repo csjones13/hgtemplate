@@ -18,6 +18,18 @@ function openDB() {
 
 // Store request in IndexedDB
 async function storeRequest(request) {
+    // Clone the request to avoid consuming the body
+    const clonedRequest = request.clone();
+    
+    // Read the body data BEFORE opening the database transaction
+    let bodyData;
+    try {
+        bodyData = await clonedRequest.json();
+    } catch (error) {
+        // If it's not JSON, get it as text
+        bodyData = await clonedRequest.text();
+    }
+
     const db = await openDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
@@ -26,7 +38,7 @@ async function storeRequest(request) {
         url: request.url,
         method: request.method,
         headers: Object.fromEntries(request.headers.entries()),
-        body: await request.json(),
+        body: bodyData,
         timestamp: Date.now()
     };
 
@@ -34,6 +46,10 @@ async function storeRequest(request) {
         const storeRequest = store.add(requestData);
         storeRequest.onsuccess = () => resolve();
         storeRequest.onerror = () => reject(storeRequest.error);
+        
+        // Handle transaction errors
+        tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(new Error('Transaction aborted'));
     });
 }
 
@@ -57,6 +73,8 @@ export async function customPost(url, options = {}) {
     // store the request in IndexedDB -> always store locally and process to api in the background
     await storeRequest(request);
 
+
+    console.log('see if we have a service worker registered', navigator.serviceWorker.controller);
     // Notify Service Worker to sync if we have a service worker registered
     if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {               
         console.log('Sending message to service worker to sync requests');
@@ -140,4 +158,19 @@ export async function customFetch(url, options = {}) {
             getRequest.onerror = () => reject(getRequest.error);
         });
     }
+}
+
+export function makeid(params = {}) {
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let check = true;
+    while(check) {
+        for (let i = 0; i < 6; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        if(!document.getElementById(`i${text}`)) {
+            check = false;
+        }
+    }
+    return `i${text}`;
 }

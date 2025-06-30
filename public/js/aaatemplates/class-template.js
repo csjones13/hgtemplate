@@ -1,4 +1,4 @@
-window.__CLASSES__.home =  class home {
+window.__CLASSES__.CLASSNAME =  class CLASSNAME {
     constructor({element = '', settings = {}, data = '', url = ''} = {element: '', settings: {}, data: '', url: ''}) {
         this.element = element;
         this.settings = settings;
@@ -62,9 +62,7 @@ window.__CLASSES__.home =  class home {
             
             // Check if the target has a specific class and data attribute this is the specific functions to handle for actions
             if(classes.includes('btn') && dataset.tag && dataset.tag === 'testbtn') {
-                CPost('/api/test', {
-                    body: JSON.stringify({ message: 'Button clicked!' }),
-                });
+                
             }
         });
     }

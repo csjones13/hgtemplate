@@ -6,8 +6,13 @@ window.__FUNCTIONS__.router = (params = {}) => {
         return '';
     }
 
-    // Clear the root element
-    d.innerHTML = '';
+    // Clear all components from the page
+    let c = Object.keys(window.__COMPONENTS__);
+    for(let i = 0; i < c.length; i++) {
+        if(window.__COMPONENTS__[c[i]]) {
+            window.__COMPONENTS__[c[i]].destroy;
+        }
+    }
 
     // get the current path normalized to lowercase
     let path = window.location.pathname.toLowerCase();
@@ -39,7 +44,7 @@ window.__FUNCTIONS__.router = (params = {}) => {
         break;
     }
 
-    JSLoader(page.component, { container: d, }).then((c) => {
+    JSLoader(page.component, { element: d, }).then((c) => {
         if(c && typeof c === 'object') {
             console.log(`Rendering component: ${page.name}`);
             c.render;
