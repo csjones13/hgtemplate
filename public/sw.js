@@ -63,6 +63,9 @@ self.addEventListener('message', (event) => {
         console.log('Syncing requests to server...');
         // You can implement your logic to sync requests to the server
         // For example, you can fetch pending requests from IndexedDB and send them to the server
+        // Pull pending requests from indexdb
+        
+
     } else {
         console.log('Unknown message type:', event.data.type);
     }

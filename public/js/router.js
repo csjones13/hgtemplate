@@ -44,6 +44,7 @@ window.__FUNCTIONS__.router = (params = {}) => {
         break;
     }
 
+    document.title = `${window.__APP_TITLE__} | ${page.name}`;
     JSLoader(page.component, { element: d, }).then((c) => {
         if(c && typeof c === 'object') {
             console.log(`Rendering component: ${page.name}`);

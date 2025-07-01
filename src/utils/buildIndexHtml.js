@@ -33,11 +33,17 @@ const generateIndexHtml = (req, csp, nonce, fileHashes) => {
                 <head>
                     <title>My App - ${req.path || 'Home'}</title>
                     ${metaTags}
+                    
+                    <!-- Set the favicon -->
+                    <link rel="icon" href="/favicon.png">
+
                     <script nonce="${nonce}">
                         window.__FILE_HASHES__ = ${fileHashes};
                         window.__NODE_ENV__ = "${process.env.NODE_ENV}";
                         window.__LOCAL_DB__ = "${process.env.LOCAL_DB}";
                         window.__STORE_NAME_PENDING__ = "${process.env.STORE_NAME_PENDING}";
+
+                        window.__APP_TITLE__ = "${process.env.APP_TITLE}";
                         
                         // Initialize global variables
                         window.__CLASSES__ = {};
